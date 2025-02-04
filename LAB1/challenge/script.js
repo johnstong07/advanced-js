@@ -17,17 +17,31 @@ let shoes = 89.78;
 
 // 1. If divided evenly, how much would each sibling get for the week?
 let amount = weeklyAllowance / 3
-alert("Each sibling will get "+amount+" dollars")
+console.log("Each sibling will get "+amount+" dollars")
 // 2. How many games can Jordan buy with their cut?
-
+let Games = amount / game
+Games = Math.round(Games)
+console.log("Jordan can buy "+Games+" Games")
 // 3. The cost of games just went up by a dollar and shoes are on sale at 50% (half) off. Change the variables to their new prices.
-
+game = game + 1
+console.log(Math.round(game))
+shoes = shoes / 2
+console.log(shoes)
 // 4. Quinn and Ricardo are twins. If they put their money together, how many on sale shoes can they buy in a month (4 weeks)?
-
+let twinsAmount = amount * 2
+console.log(twinsAmount)
+let weeklyTwins = twinsAmount * 4
+console.log(weeklyTwins)
+let numShoes = weeklyTwins / shoes
+numShoes = Math.round(numShoes)
+console.log("They can buy "+numShoes+" pairs of shoes")
 // 5. How many more games can they buy if they put their money together compared to if they had bought games on their own?
-
+let numGames = twinsAmount / game
+numGames = Math.round(numGames)
+let difference = numGames - Games
+console.log("They can buy "+difference+" more games together")
 // 6. Print out the three siblings' names. "The three siblings are __, __, and ___."
-
+console.log("The 3 siblings are "+sibling1+", "+sibling2+", and "+sibling3+"." )
 // 7. Use console.log() and a built-in method to count how many characters are in Ricardo's name.
 
 // 8. Use console.log() and a built-in method to print out the string "RICARDO MONTOYA DE LA ROSA RAMIREZ"
