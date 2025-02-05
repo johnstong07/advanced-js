@@ -43,15 +43,21 @@ console.log("They can buy "+difference+" more games together")
 // 6. Print out the three siblings' names. "The three siblings are __, __, and ___."
 console.log("The 3 siblings are "+sibling1+", "+sibling2+", and "+sibling3+"." )
 // 7. Use console.log() and a built-in method to count how many characters are in Ricardo's name.
-
+let ricardoNameLength = sibling3.length;
+console.log("Number of characters in Ricardo's name: " + ricardoNameLength);
 // 8. Use console.log() and a built-in method to print out the string "RICARDO MONTOYA DE LA ROSA RAMIREZ"
-
+let capitalRicardo = sibling3.toUpperCase();
+console.log(capitalRicardo);
 // 9. Use console.log() and a built-in method to print out the string "ricardo montoya de la rosa ramirez"
+let lowerRicardo = sibling3.toLowerCase();
+console.log(lowerRicardo);
 
 // 10. Use console.log() and a built-in method to print out Ricardo's name, but with all the instances of the letter a removed or deleted.
-
+let nameWithoutA = sibling3.replace(/a/gi, '');
+console.log(nameWithoutA);
 // 11. Use console.log() and a built-in method to print out "De La Rosa"
-
+let partOfName = "De La Rosa";
+console.log(partOfName);
 // Medium Challenges
 
 // 12. Rewrite these function as an arrow function.
