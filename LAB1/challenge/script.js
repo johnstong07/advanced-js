@@ -1,3 +1,6 @@
+const prompt = require("prompt-sync")();
+
+
 
 // Mild Challenges 
 /// The three siblings get their allowance once a week.
@@ -138,11 +141,14 @@ console.log(reduceEvens(13))
 //remove all
 const shortenString = string => {
 if(string.length > 10){
-    
+    return string.substring(0, 10);
+}else{
+    return string
 }
 }
 
-
+let string = "Hello, world! This is a test string.";
+console.log(shortenString(string));
 
 // Spicy Challenges
 let burger = 5.00;
@@ -154,23 +160,42 @@ let soda = 1.00;
 /// If no burgers, fries, and sodas can be bought, return "Sorry, no burgers for you."
 
 const buyBurgers = (budget) => {
-
+const totalBurgers = Math.floor(budget / burger)
+if(totalBurgers > 0){
+    return totalBurgers
+}else{
+    return "Sorry not enough Cash"
+}
 }
 
+const budget = prompt("Enter your budget: ")
+console.log(buyBurgers(budget));
 // 16. A meal consists of 1 burger, 1 fry, and 1 soda.
 /// Write a function called buyMeals(budget) that tells the user how many meals they can buy and how much money they will have left over.
 // Prompt the user for their budget and call the function.
 /// Bonus: Round the answer to the nearest penny.
 const buyMeals = (budget) => {
+const mealCost = burger + fries + soda
+const totalMeals = Math.floor(budget/ mealCost)
+const leftOver = (budget % mealCost).toFixed(2); // Round to the nearest penny
 
+return{
+    meals: totalMeals,
+    leftover: parseFloat(leftOver)
+}
 }
 
-
+const budgetForMeals = prompt("Enter your budget for meals:");
+const result = buyMeals(budgetForMeals);
+console.log(`You can buy ${result.meals} meals and have $${result.leftover} left over.`);
 // 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
 // Prompt the user for the two sides and call the function
 /// The larger side should be the hypotenuse  
-
-
+const missingLeg = (side1, side2) => {
+    let hypotenuse  
+    let 
+    
+}
 
 // 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
 /// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
