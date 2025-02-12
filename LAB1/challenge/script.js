@@ -191,13 +191,38 @@ console.log(`You can buy ${result.meals} meals and have $${result.leftover} left
 // 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
 // Prompt the user for the two sides and call the function
 /// The larger side should be the hypotenuse  
+
 const missingLeg = (side1, side2) => {
-    let hypotenuse  
-    let 
+    // Determine which side is the hypotenuse
+    const hypotenuse = Math.max(side1, side2);
+    const leg = Math.min(side1, side2);
     
+    // Calculate the missing leg
+    const missing_leg = Math.sqrt(hypotenuse ** 2 - leg ** 2);
+    
+    console.log(`The length of the missing leg is: ${missing_leg.toFixed(2)}`);
 }
+
+// Prompt the user for input
+const side1 = parseFloat(prompt("Enter the length of the first side (hypotenuse or leg): "));
+const side2 = parseFloat(prompt("Enter the length of the second side (hypotenuse or leg): "));
+missingLeg(side1, side2);
 
 // 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
 /// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
 /// Write a function factorial(x) that finds the factorial of any integer.
 // Prompt the user for a number and call the function
+const factorial = (x) => {
+    if (x < 0) return "Factorial is not defined for negative numbers.";
+    if (x === 0 || x === 1) return 1;
+
+    let result = 1;
+    for (let i = 2; i <= x; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+// Prompt the user for a number
+const number = parseInt(prompt("Enter a non-negative integer to find its factorial: "));
+console.log(`The factorial of ${number} is: ${factorial(number)}`);
