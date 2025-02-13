@@ -213,8 +213,12 @@ missingLeg(side1, side2);
 /// Write a function factorial(x) that finds the factorial of any integer.
 // Prompt the user for a number and call the function
 const factorial = (x) => {
-    if (x < 0) return "Factorial is not defined for negative numbers.";
-    if (x === 0 || x === 1) return 1;
+    if (x < 0){
+        return "Factorial is not defined for negative numbers.";
+    } 
+    if (x === 0 || x === 1){
+        return 1;
+    } 
 
     let result = 1;
     for (let i = 2; i <= x; i++) {
